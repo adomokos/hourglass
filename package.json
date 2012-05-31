@@ -1,0 +1,11 @@
+{
+  "name": "tic_tac_toe_in_js",
+  "version": "0.0.1",
+  "engines": {
+    "node": "0.6.6"
+  },
+  "dependencies":{
+    "mocha": ">0.10.0",
+    "should": ">=0.5.1"
+  }
+}
