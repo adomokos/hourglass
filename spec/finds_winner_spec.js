@@ -1,15 +1,6 @@
 var should = require('should');
 var Board = require('./../lib/board');
-
-var FindsWinner = function() {
-  var _didIWin = function(board) {
-    return false;
-  };
-
-  return  {
-    didIWin: _didIWin
-  };
-};
+var FindsWinner = require('./../lib/finds_winner');
 
 describe('FindsWinner', function() {
   beforeEach(function(){
