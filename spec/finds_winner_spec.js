@@ -8,11 +8,13 @@ describe('FindsWinner', function() {
     this.board = new Board();
   });
 
-/*  it('with 1 move I did not win', function() {
+  it('with 1 move I did not win', function() {
     this.board.pick('A', 'A1', function(snapshot){
-      var result = this.findsWinner.didIWin(this.board);
-      result.should.be.false;
+      snapshot.A.should.eql(['A1']);
+     // snapshot.is.not.empty();
+     // var result = this.findsWinner.didIWin(this.board);
+     // result.should.be.false;
     });
   });
-  */
+  
 });
