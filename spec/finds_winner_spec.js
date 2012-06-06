@@ -1,15 +1,5 @@
 var should = require('should');
-
-var Board = function() {
-  var _pick = function(player, spot) {
-    
-  };
-
-  return {
-    pick: _pick
-  };
-
-};
+var Board = require('./../lib/board');
 
 var FindsWinner = function() {
   var _didIWin = function(board) {
