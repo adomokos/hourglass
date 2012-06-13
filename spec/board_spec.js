@@ -9,4 +9,13 @@ describe("The board", function() {
       done();
     });
   });
+
+  it('should record 2 moves', function(done) {
+    var board = new Board();
+    board.pick('A', 'A1', function(){});
+    board.pick('A', 'A2', function(snapshot){
+      snapshot.A.should.eql(['A1','A2']);
+      done();
+    });
+  });
 });
