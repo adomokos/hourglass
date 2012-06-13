@@ -30,14 +30,16 @@ describe("The board", function() {
     });
   });
 
-  it('throws an error for the same spot');//, function(done) {
+  it('throws an error for the same spot');
 /*
-    this.board.pick('A', 'A1');
-    this.board.pick('B', 'A1', function(snapshot) {
-      snapshot.A.should.eql(['A1']);
-      snapshot.B.should.eql(['B2']);
-      done();
-    });
+    , function() {
+    pending;
+    try {
+      this.board.pick('A', 'A1');
+      this.board.pick('B', 'A1');
+    } catch(err) {
+      should.ok;
+    }
   });
 */
 });
