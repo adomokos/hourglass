@@ -1,4 +1,4 @@
-REPORTER = dot
+REPORTER = list
 
 test: test-bdd
 
