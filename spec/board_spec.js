@@ -1,5 +1,5 @@
-var should = require('should');
-var Board = require('./../lib/board');
+var should = require('should')
+  , Board = require('./../lib/board');
 
 describe("The board", function() {
   beforeEach(function() {
@@ -30,16 +30,20 @@ describe("The board", function() {
     });
   });
 
-  it('throws an error for the same spot');
-/*
-    , function() {
-    pending;
-    try {
-      this.board.pick('A', 'A1');
-      this.board.pick('B', 'A1');
-    } catch(err) {
-      should.ok;
-    }
+  it('throws an error for the same spot for player B', function() {
+    this.board.pick('A', 'A1');
+    var that = this;
+    (function() {
+      that.board.pick('B', 'A1');
+    }).should.throw("Slot already taken");
   });
-*/
+
+  it('throws an error for the same spot for player A', function() {
+      this.board.pick('A', 'A1');
+      this.board.pick('B', 'B1');
+      var that = this;
+      (function() {
+        that.board.pick('A', 'B1');
+      }).should.throw("Slot already taken");
+  });
 });

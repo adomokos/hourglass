@@ -9,12 +9,12 @@ describe('FindsWinner', function() {
   });
 
   it('with 1 move I did not win', function() {
+    var that = this;
     this.board.pick('A', 'A1', function(snapshot){
       snapshot.A.should.eql(['A1']);
-     // snapshot.is.not.empty();
-     // var result = this.findsWinner.didIWin(this.board);
-     // result.should.be.false;
+      that.findsWinner.didIWin(this.board, function(win) {
+        win.should.be.false;
+     });
     });
   });
-  
 });
