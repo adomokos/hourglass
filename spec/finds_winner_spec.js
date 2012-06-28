@@ -27,6 +27,7 @@ describe('FindsWinner', function() {
       that.findsWinner.didIWin(snapshot, function(win) {
         win.won.should.be.true;
         win.player.should.equal('A');
+        win.slots.should.eql(['A1', 'A2', 'A3']);
       });
     });
     
