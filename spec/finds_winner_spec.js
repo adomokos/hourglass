@@ -13,11 +13,11 @@ describe('FindsWinner', function() {
     this.board.pick('A', 'A1', function(snapshot){
       snapshot.A.should.eql(['A1']);
       that.findsWinner.didIWin(snapshot, function(win) {
-        win.should.be.false;
+        win.won.should.be.false;
      });
     });
   });
-  it('when 1 wins', function() {
+  it('when A wins', function() {
     var that = this;
     this.board.pick('A', 'A1');
     this.board.pick('B', 'B1');
@@ -25,7 +25,8 @@ describe('FindsWinner', function() {
     this.board.pick('B', 'B2');
     this.board.pick('A', 'A3', function(snapshot){
       that.findsWinner.didIWin(snapshot, function(win) {
-        win.should.be.true;
+        win.won.should.be.true;
+        win.player.should.equal('A');
       });
     });
     
