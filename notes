@@ -1,0 +1,2 @@
+1.  Change board to take a player object instead of 'A' or 'B'
+2.  add prototype to win object to say something like player.should.be('Attila') or player1.should.be.winner
