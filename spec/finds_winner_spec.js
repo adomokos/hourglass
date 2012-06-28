@@ -12,9 +12,22 @@ describe('FindsWinner', function() {
     var that = this;
     this.board.pick('A', 'A1', function(snapshot){
       snapshot.A.should.eql(['A1']);
-      that.findsWinner.didIWin(this.board, function(win) {
+      that.findsWinner.didIWin(snapshot, function(win) {
         win.should.be.false;
      });
     });
+  });
+  it('when 1 wins', function() {
+    var that = this;
+    this.board.pick('A', 'A1');
+    this.board.pick('B', 'B1');
+    this.board.pick('A', 'A2');
+    this.board.pick('B', 'B2');
+    this.board.pick('A', 'A3', function(snapshot){
+      that.findsWinner.didIWin(snapshot, function(win) {
+        win.should.be.true;
+      });
+    });
+    
   });
 });
