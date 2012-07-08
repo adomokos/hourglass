@@ -35,6 +35,16 @@ describe("The board", function() {
     });
   });
 
+  it('returns players with snapshot', function(done) {
+    this.board.pick(this.players, 'A1');
+    this.board.pick(this.players, 'B2', function(snapshot) {
+      snapshot.Players().Player1.should.equal('Declan');
+      snapshot.Players().Player2.should.equal('Cora');
+      snapshot.Players().CurrentPlayer().should.equal('Declan');
+      done();
+    });
+  });
+
   it('throws an error for the same spot for player B', function() {
     this.board.pick('A', 'A1');
     var that = this;

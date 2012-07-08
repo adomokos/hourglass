@@ -12,7 +12,7 @@ describe('FindsWinner', function() {
 
   it('with 1 move I did not win', function() {
     var that = this;
-    this.board.pick('A', 'A1', function(snapshot){
+    this.board.pick(this.players, 'A1', function(snapshot){
       snapshot.A.should.eql(['A1']);
       that.findsWinner.didIWin(snapshot, function(win) {
         win.won.should.be.false;
@@ -21,14 +21,14 @@ describe('FindsWinner', function() {
   });
   it('when A wins', function() {
     var that = this;
-    this.board.pick('A', 'A1');
-    this.board.pick('B', 'B1');
-    this.board.pick('A', 'A2');
-    this.board.pick('B', 'B2');
-    this.board.pick('A', 'A3', function(snapshot){
+    this.board.pick(this.players, 'A1');
+    this.board.pick(this.players, 'B1');
+    this.board.pick(this.players, 'A2');
+    this.board.pick(this.players, 'B2');
+    this.board.pick(this.players, 'A3', function(snapshot){
       that.findsWinner.didIWin(snapshot, function(win) {
         win.won.should.be.true;
-        win.player.should.equal('A');
+        win.player.should.equal('Reilly');
         win.slots.should.eql(['A1', 'A2', 'A3']);
       });
     });
