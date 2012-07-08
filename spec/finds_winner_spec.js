@@ -1,11 +1,13 @@
 var should = require('should');
 var Board = require('./../lib/board');
 var FindsWinner = require('./../lib/finds_winner');
+var Players = require('./../lib/players');
 
 describe('FindsWinner', function() {
   beforeEach(function(){
     this.findsWinner = new FindsWinner();
-    this.board = new Board();
+    this.players = new Players('Reilly', 'Declan');
+    this.board = new Board(this.players);
   });
 
   it('with 1 move I did not win', function() {
