@@ -1,2 +1,4 @@
-1.  Change board to take a player object instead of 'A' or 'B'
+1.  Change board to take a player object instead of 'A' or 'B' - Done NH.
+    1a.  Players now have properties for player1 and player2 as well as keeping track of who is the current player.  Board and FindsWinner can now be updated 
+        to check for current player instead of the hard coded 'A' value.
 2.  add prototype to win object to say something like player.should.be('Attila') or player1.should.be.winner
