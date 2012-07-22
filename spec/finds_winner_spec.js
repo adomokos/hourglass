@@ -120,4 +120,38 @@ describe('FindsWinner', function() {
       });
     });
   });
+
+  it('when B wins, first diagional', function(done) {
+    var that = this;
+    this.board.pick(this.players, 'B1');
+    this.board.pick(this.players, 'C3');
+    this.board.pick(this.players, 'A2');
+    this.board.pick(this.players, 'A1');
+    this.board.pick(this.players, 'C1');
+    this.board.pick(this.players, 'B2', function(snapshot) {
+      that.findsWinner.didIWin(snapshot, function(win) {
+        win.won.should.be.true;
+        win.player.should.equal('Declan');
+        win.slots.should.eql(['A1', 'B2', 'C3']);
+        done();
+      });
+    });
+  });
+
+  it('when A wins, second diagional', function(done) {
+    var that = this;
+    this.board.pick(this.players, 'B2');
+    this.board.pick(this.players, 'C3');
+    this.board.pick(this.players, 'A3');
+    this.board.pick(this.players, 'A1');
+    this.board.pick(this.players, 'C1', function(snapshot) {
+      that.findsWinner.didIWin(snapshot, function(win) {
+        win.won.should.be.true;
+        win.player.should.equal('Reilly');
+        win.slots.should.eql(['A3', 'B2', 'C1']);
+        done();
+      });
+    });
+  });
+
 });
