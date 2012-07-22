@@ -104,4 +104,20 @@ describe('FindsWinner', function() {
     });
   });
 
+  it('when B wins, third column', function(done) {
+    var that = this;
+    this.board.pick(this.players, 'B2');
+    this.board.pick(this.players, 'C3');
+    this.board.pick(this.players, 'A2');
+    this.board.pick(this.players, 'A3');
+    this.board.pick(this.players, 'C1');
+    this.board.pick(this.players, 'B3', function(snapshot) {
+      that.findsWinner.didIWin(snapshot, function(win) {
+        win.won.should.be.true;
+        win.player.should.equal('Declan');
+        win.slots.should.eql(['A3', 'B3', 'C3']);
+        done();
+      });
+    });
+  });
 });
