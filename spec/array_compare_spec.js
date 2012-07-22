@@ -31,4 +31,17 @@ describe('array compare', function() {
     var result = first.compare([1, 2, 3, 4, 5, 6, 7]);
     result.should.be.true;    
   });
+
+  it('array out of order', function() {
+    var first = [1, 3, 2, 5, 4, 7, 6];
+    var result = first.compare([1, 2, 3, 4, 5, 6, 7]);
+    result.should.be.true;    
+  });
+
+  it('array out of order words', function() {
+    var first = ['Bill', 'Ted', 'Steve'];
+    var result = first.compare(['Steve', 'Bill', 'Ted']);
+    result.should.be.true;    
+  });
+
 });
