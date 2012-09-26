@@ -1,3 +1,7 @@
-1.  Change board to take a player object instead of 'A' or 'B' - Done NH.
-2.  Players class need updated to allow players with the same name.
-3.  add prototype to win object to say something like player.should.be('Attila') or player1.should.be.winner
+1.  Players class need updated to allow players with the same name.
+2.  add prototype to win object to say something like player.should.be('Attila') or player1.should.be.winner
+_____________________________________________
+3.  Event to signal the game is complete
+4.  Check for tie
+5.  ai
+6.  Why inject players on pick

@@ -61,5 +61,4 @@ describe("The board", function() {
         that.board.pick('A', 'B1');
       }).should.throw("Slot already taken");
     });
-    
 });
