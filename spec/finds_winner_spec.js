@@ -35,7 +35,7 @@ describe('FindsWinner', function() {
         done();
       });
     });
-    
+
   });
 
   it('when B wins, second row', function(done) {
