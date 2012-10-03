@@ -14,4 +14,4 @@ test-doc:
 		--ui bdd \
 
 run-cukes:
-	@./node_modules/cucumber/bin/cucumber.js
+	@./node_modules/cucumber/bin/cucumber.js -f pretty
