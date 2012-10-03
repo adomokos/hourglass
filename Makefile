@@ -13,3 +13,5 @@ test-doc:
 		--reporter list \
 		--ui bdd \
 
+run-cukes:
+	@./node_modules/cucumber/bin/cucumber.js
